@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-USB Threat Guardian
+ORisk is a USB threat-detection and monitoring tool (USB Guardian). It scans connected USB devices for threats such as BadUSB and HID emulation, monitors for new devices in real time, and supports whitelisting, quarantine, forensic dumps and reporting. Device fingerprints and audit history are stored in a persistent database.
 
 ---
 
 ## ✨ Features
 
-- USB device threat analysis and forensics: BadUSB/HID detection, risk scoring, quarantine and audit
+- Deep USB threat analysis (BadUSB, HID emulation, spoofed VID/PID)
+- Real-time monitoring with a configurable polling interval
+- Device quarantine via udev rules plus whitelist/blocklist management
+- Forensic dump of device tree, interfaces and endpoints
+- SQLite-backed audit log with SHA-256 device fingerprints
+- HTML and JSON export, multi-profile support and an offline self-test
 
 ---
 
@@ -38,7 +43,10 @@ USB Threat Guardian
 ## 🚀 Usage
 
 ```bash
-./ORisk
+./ORisk --scan
+./ORisk --monitor -n 10
+./ORisk --export-html report.html
+./ORisk --help
 ```
 
 ---
